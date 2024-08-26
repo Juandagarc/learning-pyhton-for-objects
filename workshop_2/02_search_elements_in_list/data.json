@@ -1,0 +1,28 @@
+{
+    "Elements": [
+        {
+            "id": 0,
+            "input": [
+                "pedro",
+                "pedro",
+                "andres",
+                "andres",
+                "andres",
+                "nobody"
+            ],
+            "searched": "pedro",
+            "found": "even"
+        },
+        {
+            "id": 1,
+            "input": [
+                "medico",
+                "Juan",
+                "medico",
+                "pedro"
+            ],
+            "searched": "Juan",
+            "found": "odd"
+        }
+    ]
+}
