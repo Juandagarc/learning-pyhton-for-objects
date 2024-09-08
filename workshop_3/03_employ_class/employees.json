@@ -1,0 +1,19 @@
+{
+    "Employees": [
+        {
+            "id": 0,
+            "name": "Ana Lopez",
+            "gender": "female",
+            "birth_date": "1980-05-15",
+            "hire_date": "2010-06-01",
+            "hourly_rate": 20,
+            "hours_worked": 160,
+            "monthly_salary": 3200,
+            "seniority": 14,
+            "years_until_retirement": 16,
+            "monthly_health_contributions": 128.0,
+            "monthly_pension_contributions": 128.0,
+            "annual_pension_contributions": 1536.0
+        }
+    ]
+}
