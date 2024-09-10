@@ -1,0 +1,22 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "name": "Juan",
+            "base_salary": 2000.0,
+            "years_of_service": 6
+        },
+        {
+            "id": 2,
+            "name": "Andres",
+            "base_salary": 222.0,
+            "years_of_service": 2
+        },
+        {
+            "id": 3,
+            "name": "Felipe",
+            "base_salary": 10000.0,
+            "years_of_service": 40
+        }
+    ]
+}
