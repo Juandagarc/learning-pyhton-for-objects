@@ -1,11 +1,7 @@
 def save_to_file(text, file_name):
-    try:
-        with open(file_name, "w") as file:
-            file.write(text)
-        print(f"Text saved to {file_name}")
-    except FileNotFoundError:
-        with open(file_name, "a") as file:
-            file.write(text)
+    with open(file_name, "w") as file:
+        file.write(text)
+    print(f"Text saved to {file_name}")
 
 
 class CaesarCipher:
