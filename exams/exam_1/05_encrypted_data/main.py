@@ -12,31 +12,33 @@ class CaesarCipher:
         self.ABC = ABC
 
     def encrypt(self):
-        encrypted_message = ""
+        encrypted_message = []
         for letter in self.message:
             if letter in self.abc:
-                encrypted_message += self.abc[(self.abc.index(letter) - self.key) % len(self.abc)]
+                encrypted_message.append(self.abc[(self.abc.index(letter) - self.key) % len(self.abc)])
             elif letter in self.ABC:
-                encrypted_message += self.ABC[(self.ABC.index(letter) - self.key) % len(self.ABC)]
+                encrypted_message.append(self.ABC[(self.ABC.index(letter) - self.key) % len(self.ABC)])
             else:
-                encrypted_message += letter
-        return encrypted_message
+                encrypted_message.append(letter)
+        return ''.join(encrypted_message)
 
     def decrypt(self):
-        decrypted_message = ""
+        decrypted_message = []
         for letter in self.message:
             if letter in self.abc:
-                decrypted_message += self.abc[(self.abc.index(letter) + self.key) % len(self.abc)]
+                decrypted_message.append(self.abc[(self.abc.index(letter) + self.key) % len(self.abc)])
             elif letter in self.ABC:
-                decrypted_message += self.ABC[(self.ABC.index(letter) + self.key) % len(self.ABC)]
+                decrypted_message.append(self.ABC[(self.ABC.index(letter) + self.key) % len(self.ABC)])
             else:
-                decrypted_message += letter
-        return decrypted_message
+                decrypted_message.append(letter)
+        return ''.join(decrypted_message)
 
 
 def main():
-    abc = "abcdefghijklmnopqrstuvwxyz"
-    ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+           'w', 'x', 'y', 'z']
+    ABC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+           'W', 'X', 'Y', 'Z']
     while True:
         key = int(input("Enter the key: "))
         if type(key) != int:
@@ -50,7 +52,7 @@ def main():
                 break
             else:
                 break
-    message = input("Enter the message: ")
+    message = list(input("Enter the message: "))
     cipher = CaesarCipher(key, message, abc, ABC)
     while True:
         option = input("Encrypt or decrypt (E/D): ")
