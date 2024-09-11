@@ -12,19 +12,19 @@ def load_data():
                 parts = line.strip().split(',')
                 if len(parts) == 4:
                     emp_id, name, base_salary, years_of_service = parts
-                    employees.append({
-                        "id": int(emp_id),
-                        "name": name,
-                        "base_salary": float(base_salary),
-                        "years_of_service": int(years_of_service)
-                    })
-    return {"employees": employees}
+                    employees.append((
+                        int(emp_id),
+                        name,
+                        float(base_salary),
+                        int(years_of_service)
+                    ))
+    return employees
 
 
-def save_data(data):
+def save_data(employees):
     with open(path, 'w') as file:
-        for emp in data.get("employees", []):
-            line = f"{emp['id']},{emp['name']},{emp['base_salary']},{emp['years_of_service']}\n"
+        for emp in employees:
+            line = f"{emp[0]},{emp[1]},{emp[2]},{emp[3]}\n"
             file.write(line)
 
 
@@ -36,11 +36,11 @@ class Employee:
         self.id = emp_id if emp_id is not None else self._get_next_id()
 
     def _get_next_id(self):
-        employees = load_data().get("employees", [])
+        employees = load_data()
         if not employees:
             return 1
         else:
-            max_id = max(emp["id"] for emp in employees)
+            max_id = max(emp[0] for emp in employees)
             return max_id + 1
 
     def calculate_salary(self):
@@ -59,18 +59,21 @@ class Employee:
                 f"{self.base_salary} and has worked for {self.years_of_service} years.")
 
     def save_data(self):
-        data = load_data()
+        employees = load_data()
+        updated = False
+        new_employees = []
 
-        if "employees" not in data:
-            data["employees"] = []
+        for emp in employees:
+            if emp[0] == self.id:
+                new_employees.append((self.id, self.name, self.base_salary, self.years_of_service))
+                updated = True
+            else:
+                new_employees.append(emp)
 
-        existing_data = {item["id"]: item for item in data["employees"]}
-        existing_data[self.id] = {"id": self.id, "name": self.name,
-                                  "base_salary": self.base_salary, "years_of_service": self.years_of_service}
+        if not updated:
+            new_employees.append((self.id, self.name, self.base_salary, self.years_of_service))
 
-        data["employees"] = list(existing_data.values())
-
-        save_data(data)
+        save_data(new_employees)
 
 
 class EmployeeManager:
@@ -79,10 +82,9 @@ class EmployeeManager:
         self.load_employees()
 
     def load_employees(self):
-        data = load_data()
-        if "employees" in data:
-            for emp in data["employees"]:
-                self.employees.append(Employee(emp["name"], emp["base_salary"], emp["years_of_service"], emp["id"]))
+        employee_data = load_data()
+        for emp in employee_data:
+            self.employees.append(Employee(emp[1], emp[2], emp[3], emp[0]))
 
     def add_employee(self, employee: Employee):
         self.employees.append(employee)
@@ -95,11 +97,11 @@ class EmployeeManager:
         return "Employee not found"
 
     def delete_employee(self, id: int):
-        data = load_data()
-        if "employees" in data:
-            data["employees"] = [emp for emp in data["employees"] if emp["id"] != id]
-            save_data(data)
-            self.employees = [emp for emp in self.employees if emp.id != id]  # Remove from local list
+        employees = load_data()
+        new_employees = [emp for emp in employees if emp[0] != id]
+        if len(new_employees) < len(employees):
+            save_data(new_employees)
+            self.employees = [emp for emp in self.employees if emp.id != id]
             return f"Employee with ID {id} removed."
         return "Employee not found"
 
@@ -151,7 +153,6 @@ def main():
             print(manager.update_employee(id))
 
         elif choice == '5':
-            print("View salary of an employee")
             id = int(input("Enter employee id: "))
             for emp in manager.employees:
                 if emp.id == id:
