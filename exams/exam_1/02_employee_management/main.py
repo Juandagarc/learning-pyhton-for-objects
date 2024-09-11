@@ -1,22 +1,31 @@
-from colorama import init, Fore, Style
-import json
+import os
 
-init(autoreset=True)
-
-path = 'data.json'
+path = 'data.txt'
 
 
 def load_data():
-    try:
+    employees = []
+    if os.path.exists(path):
         with open(path, 'r') as file:
-            return json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {}
+            lines = file.readlines()
+            for line in lines:
+                parts = line.strip().split(',')
+                if len(parts) == 4:
+                    emp_id, name, base_salary, years_of_service = parts
+                    employees.append({
+                        "id": int(emp_id),
+                        "name": name,
+                        "base_salary": float(base_salary),
+                        "years_of_service": int(years_of_service)
+                    })
+    return {"employees": employees}
 
 
 def save_data(data):
     with open(path, 'w') as file:
-        json.dump(data, file, indent=4)
+        for emp in data.get("employees", []):
+            line = f"{emp['id']},{emp['name']},{emp['base_salary']},{emp['years_of_service']}\n"
+            file.write(line)
 
 
 class Employee:
@@ -55,7 +64,6 @@ class Employee:
         if "employees" not in data:
             data["employees"] = []
 
-        # Update existing employee or add a new one
         existing_data = {item["id"]: item for item in data["employees"]}
         existing_data[self.id] = {"id": self.id, "name": self.name,
                                   "base_salary": self.base_salary, "years_of_service": self.years_of_service}
@@ -110,18 +118,18 @@ def main():
     manager = EmployeeManager()
 
     while True:
-        print(Fore.CYAN + "Menu:" + Style.RESET_ALL)
-        print(Fore.YELLOW + "1. Add employee" + Style.RESET_ALL)
-        print(Fore.YELLOW + "2. Show employee" + Style.RESET_ALL)
-        print(Fore.YELLOW + "3. Delete employee" + Style.RESET_ALL)
-        print(Fore.YELLOW + "4. Update employee" + Style.RESET_ALL)
-        print(Fore.YELLOW + "5. Show salary of an employee" + Style.RESET_ALL)
-        print(Fore.RED + "0. Exit" + Style.RESET_ALL)
+        print("Menu:")
+        print("1. Add employee")
+        print("2. Show employee")
+        print("3. Delete employee")
+        print("4. Update employee")
+        print("5. Show salary of an employee")
+        print("0. Exit")
 
         choice = input("Choose an option: ")
 
         if choice == '0':
-            print(Fore.BLUE + "Bye!" + Style.RESET_ALL)
+            print("Bye!")
             break
 
         if choice == '1':
@@ -143,17 +151,17 @@ def main():
             print(manager.update_employee(id))
 
         elif choice == '5':
-            print(Fore.CYAN + "View salary of an employee" + Style.RESET_ALL)
+            print("View salary of an employee")
             id = int(input("Enter employee id: "))
             for emp in manager.employees:
                 if emp.id == id:
                     print(f"Employee {emp.id}: {emp.name} has a salary of {emp.calculate_salary()}")
                     break
             else:
-                print(Fore.RED + "Employee not found." + Style.RESET_ALL)
+                print("Employee not found.")
 
         else:
-            print(Fore.RED + "Invalid option." + Style.RESET_ALL)
+            print("Invalid option.")
 
 
 main()
