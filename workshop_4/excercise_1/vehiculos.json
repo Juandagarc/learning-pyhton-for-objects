@@ -1,0 +1,38 @@
+[
+    {
+        "velocidad": 200,
+        "cilindrada": 80,
+        "tipo": "Coche",
+        "marca": "Chevrolet",
+        "modelo": "Camaro",
+        "anio": 2020,
+        "tipo_llanta": "MarcaA",
+        "tipo_combustible": "Extra",
+        "color": "Amarillo",
+        "ruedas": 4
+    },
+    {
+        "velocidad": 80,
+        "cilindrada": 40,
+        "tipo": "Moto",
+        "marca": "Renault",
+        "modelo": "Kripton",
+        "anio": 2015,
+        "tipo_llanta": "MarcaB",
+        "tipo_combustible": "Corriente",
+        "color": "Negro",
+        "ruedas": 2
+    },
+    {
+        "velocidad": 30,
+        "cilindrada": 20,
+        "tipo": "Camion",
+        "marca": "Mazda",
+        "modelo": "Camion mazda",
+        "anio": 2024,
+        "tipo_llanta": "MarcaC",
+        "tipo_combustible": "ACPM",
+        "color": "Blanco",
+        "ruedas": 6
+    }
+]
