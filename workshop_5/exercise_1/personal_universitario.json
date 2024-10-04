@@ -1,0 +1,58 @@
+[
+    {
+        "nombre": "Luis M\u00e9ndez",
+        "id_personal": "PA001",
+        "fecha_ingreso": "2020-01-10 00:00:00",
+        "edad": 23,
+        "email": "luis@universidad.com",
+        "telefono": "333444555",
+        "horas_trabajadas": 80,
+        "tipo_profesor": "auxiliar",
+        "salario_hora": 20,
+        "carrera": "Matem\u00e1ticas",
+        "nivel": 2,
+        "promedio": 4.5
+    },
+    {
+        "nombre": "Dr. Juan P\u00e9rez",
+        "id_personal": "P001",
+        "fecha_ingreso": "2005-03-14 00:00:00",
+        "edad": 45,
+        "email": "juan@universidad.com",
+        "telefono": "123456789",
+        "horas_trabajadas": 160,
+        "tipo_profesor": "titular",
+        "salario_hora": 50,
+        "carrera": null,
+        "nivel": null,
+        "promedio": null
+    },
+    {
+        "nombre": "Carlos G\u00f3mez",
+        "id_personal": "A001",
+        "fecha_ingreso": "2021-09-01 00:00:00",
+        "edad": 20,
+        "email": "carlos@universidad.com",
+        "telefono": "111222333",
+        "horas_trabajadas": null,
+        "tipo_profesor": null,
+        "salario_hora": null,
+        "carrera": "Ingenier\u00eda de Sistemas",
+        "nivel": 3,
+        "promedio": 4.2
+    },
+    {
+        "nombre": "Ana L\u00f3pez",
+        "id_personal": "PU001",
+        "fecha_ingreso": "2015-05-10 00:00:00",
+        "edad": 40,
+        "email": "ana@universidad.com",
+        "telefono": "444555666",
+        "horas_trabajadas": null,
+        "tipo_profesor": null,
+        "salario_hora": null,
+        "carrera": "Ingenier\u00eda Electr\u00f3nica",
+        "nivel": 5,
+        "promedio": 4.8
+    }
+]

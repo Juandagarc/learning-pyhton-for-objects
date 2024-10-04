@@ -1,0 +1,50 @@
+[
+    {
+        "nombre": "Laura Torres",
+        "id_personal": "C001",
+        "edad": 30,
+        "email": "laura@correo.com",
+        "telefono": "123456789",
+        "tipo_instrumento": "Piano",
+        "afinacion": "440Hz",
+        "material": "Madera",
+        "marca_instrumento": "Yamaha",
+        "tipo_cliente": "Regular",
+        "pianos_comprados": [
+            "<__main__.PianoDeCola object at 0x000001A1504CF6B0>"
+        ]
+    },
+    {
+        "nombre": "Juan G\u00f3mez",
+        "id_personal": "E001",
+        "edad": 28,
+        "email": "juan@correo.com",
+        "telefono": "987654321",
+        "tipo_instrumento": "Guitarra",
+        "afinacion": "Standard",
+        "material": "Madera",
+        "marca_instrumento": "Gibson",
+        "salario": 1500,
+        "puesto": "Vendedor"
+    },
+    {
+        "nombre": "Carlos Ruiz",
+        "id_personal": "P001",
+        "edad": 45,
+        "email": "carlos@correo.com",
+        "telefono": "123987654",
+        "tipo_instrumento": "Flauta",
+        "afinacion": "Do",
+        "material": "Metal",
+        "marca_instrumento": "Yamaha",
+        "empresa": "Pianos S.A."
+    },
+    {
+        "marca": "Yamaha",
+        "modelo": "C7",
+        "a\u00f1o_fabricacion": 2022,
+        "precio": 15000,
+        "tipo": "De Cola",
+        "longitud": 2.27
+    }
+]
