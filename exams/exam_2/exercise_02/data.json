@@ -1,0 +1,38 @@
+{
+    "hotel": {
+        "name": "The Grand Budapest Hotel",
+        "rooms": [
+            {
+                "type": "Simple",
+                "number": 1,
+                "price": 100,
+                "state": true,
+                "capacity": 1,
+                "services": "No services provided"
+            },
+            {
+                "type": "Double",
+                "number": 2,
+                "price": 150,
+                "state": true,
+                "capacity": 2,
+                "services": [
+                    "TV",
+                    "air-conditioner"
+                ]
+            },
+            {
+                "type": "Suite",
+                "number": 3,
+                "price": 250,
+                "state": false,
+                "capacity": 4,
+                "services": [
+                    "TV",
+                    "air-conditioner",
+                    "refrigerator"
+                ]
+            }
+        ]
+    }
+}
