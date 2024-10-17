@@ -28,6 +28,7 @@ class Product:
     def stock(self, stock):
         self.__stock = stock
 
+
 class Electronic(Product):
     def __init__(self, name, price, stock, warranty):
         super().__init__(name, price, stock)
@@ -49,6 +50,7 @@ class Electronic(Product):
             "warranty": self.warranty
         }
 
+
 class Food(Product):
     def __init__(self, name, price, stock, expiration_date):
         super().__init__(name, price, stock)
@@ -69,6 +71,7 @@ class Food(Product):
             "stock": self.stock,
             "expiration_date": self.expiration_date
         }
+
 
 class Clothes(Product):
     def __init__(self, name, price, stock, size):
