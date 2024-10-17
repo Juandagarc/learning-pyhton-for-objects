@@ -1,0 +1,110 @@
+{
+    "Electronics": [
+        {
+            "name": "Smartphone",
+            "price": 700,
+            "stock": 50,
+            "warranty": "2 years"
+        },
+        {
+            "name": "Laptop",
+            "price": 1200,
+            "stock": 30,
+            "warranty": "1 year"
+        },
+        {
+            "name": "Headphones",
+            "price": 150,
+            "stock": 100,
+            "warranty": "6 months"
+        },
+        {
+            "name": "Smartwatch",
+            "price": 250,
+            "stock": 40,
+            "warranty": "1 year"
+        },
+        {
+            "name": "Tablet",
+            "price": 400,
+            "stock": 25,
+            "warranty": "1 year"
+        }
+    ],
+    "Food": [
+        {
+            "name": "Apple",
+            "price": 0.5,
+            "stock": 200,
+            "expiration_date": "2024-12-31"
+        },
+        {
+            "name": "Bread",
+            "price": 1.2,
+            "stock": 100,
+            "expiration_date": "2024-10-20"
+        },
+        {
+            "name": "Milk",
+            "price": 1.5,
+            "stock": 80,
+            "expiration_date": "2024-10-22"
+        },
+        {
+            "name": "Cheese",
+            "price": 3.5,
+            "stock": 60,
+            "expiration_date": "2024-11-05"
+        },
+        {
+            "name": "Yogurt",
+            "price": 2.0,
+            "stock": 90,
+            "expiration_date": "2024-10-25"
+        },
+        {
+            "name": "Toblerone",
+            "price": 20.0,
+            "stock": 50,
+            "expiration_date": "20-01-2025"
+        }
+    ],
+    "Clothes": [
+        {
+            "name": "T-shirt",
+            "price": 15,
+            "stock": 100,
+            "size": "M"
+        },
+        {
+            "name": "Jeans",
+            "price": 40,
+            "stock": 69,
+            "size": "L"
+        },
+        {
+            "name": "Jacket",
+            "price": 75,
+            "stock": 30,
+            "size": "XL"
+        },
+        {
+            "name": "Sneakers",
+            "price": 60,
+            "stock": 50,
+            "size": "42"
+        },
+        {
+            "name": "Hat",
+            "price": 20,
+            "stock": 61,
+            "size": "One Size"
+        },
+        {
+            "name": "Adidas Shoes",
+            "price": 200.0,
+            "stock": 35,
+            "size": "10"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+[
+    {
+        "tittle": "Narnia",
+        "ISBN": 98765432,
+        "publisher": "Santillana",
+        "author": "C. S. Lewis",
+        "f.publicacion": "1950",
+        "rese\u00f1a": "Set in the magical land of Narnia, it follows children who discover this world through a wardrobe",
+        "genre": "adventure",
+        "sub_genre": [
+            "Distopic"
+        ]
+    },
+    {
+        "tittle": "Hunger Games",
+        "ISBN": 912345678,
+        "publisher": "Scholastic",
+        "author": "Susane Collins",
+        "f.publicacion": "2008",
+        "rese\u00f1a": "set in a future society where the government, known as the Capitol, holds an annual event forcing children from 12 districts to fight to the death in a televised competition.",
+        "genre": "Action",
+        "sub_genre": [
+            "Adventure",
+            "Distopic"
+        ]
+    },
+    {
+        "tittle": "Jumanji",
+        "ISBN": 97652345,
+        "publisher": "Pedro Pascal",
+        "author": "Nacho Vidal",
+        "f.publicacion": "2020",
+        "rese\u00f1a": "Very good",
+        "genre": "Action",
+        "sub_genre": [
+            "Comedy"
+        ]
+    },
+    {
+        "titulo": "Max",
+        "isbn": 2176387126,
+        "editorial": "pepe",
+        "autor": "Juan",
+        "fecha de publicacion": "2020",
+        "rese\u00f1a": "Muy bueno",
+        "genero": "accion",
+        "sub_genero": []
+    }
+]
